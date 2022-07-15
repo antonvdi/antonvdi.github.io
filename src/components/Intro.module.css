@@ -1,0 +1,16 @@
+.Container {
+    position: absolute;
+    top: 10%;
+    right: 30%;
+}
+.Picture {
+    width: 500px;
+}
+
+.Header {
+    position: absolute;
+    top: 50%;
+    transform: translate(-75%, -50%);
+    font-family: 'Roboto';
+    font-size: 35px;
+}
