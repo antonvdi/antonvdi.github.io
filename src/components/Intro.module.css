@@ -8,9 +8,22 @@
 }
 
 .Header {
-    position: absolute;
-    top: 50%;
-    transform: translate(-75%, -50%);
+    font-size: 50px;
     font-family: 'Roboto';
-    font-size: 35px;
+    margin: 0;
+}
+
+.CenterDiv {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-weight: 700;
+    color: #0072b1;
 }

@@ -1,0 +1,23 @@
+.div {
+    font-size: 14px;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-top: 0.1px;
+    padding-bottom: 0.1px;
+    margin: 10px auto;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.message {
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+.bigMessage {
+    font-family: 'Roboto';
+    font-size: 20px;
+    text-align: center;
+}

@@ -9,7 +9,7 @@ Date.prototype.addDays = function(days) {
 function getDates(startDate, stopDate) {
     var dateArray = [];
     var currentDate = startDate;
-    while (currentDate <= stopDate) {
+    while (currentDate < stopDate) {
         dateArray.push(new Date (currentDate));
         currentDate = currentDate.addDays(1);
     }
