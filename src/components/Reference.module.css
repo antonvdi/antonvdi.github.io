@@ -1,0 +1,11 @@
+.extra {
+    display: none;
+}
+
+p:hover .extra {
+    display: inline-block;
+}
+
+a {
+    color: #0072b1;
+}

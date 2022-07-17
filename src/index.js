@@ -4,21 +4,26 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
 import Island from './components/Island';
-
+import Emner from './components/Emner';
+import HomeButton from './components/HomeButton';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}/>
-      <Route path="/island" element={<Island />}/>
-    </Routes>
-  </BrowserRouter>
+  <div>
+    <HashRouter>
+      <HomeButton link="/"></HomeButton>
+      <Routes>
+        <Route path="/" element={<App />}/>
+        <Route path="/island" element={<Island />}/>
+        <Route path="/emner" element={<Emner />}/>
+      </Routes>
+    </HashRouter>
+  </div>
 );
 
 // If you want to start measuring performance in your app, pass a function

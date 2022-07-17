@@ -1,4 +1,3 @@
-//import {Link,} from "react-router-dom";
 import HeartButton from "./components/HeartButton.js"
 import Intro from "./components/Intro.js";
 

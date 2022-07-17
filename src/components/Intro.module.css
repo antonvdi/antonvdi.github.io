@@ -1,15 +1,7 @@
-.Container {
-    position: absolute;
-    top: 10%;
-    right: 30%;
-}
-.Picture {
-    width: 500px;
-}
-
 .Header {
     font-size: 50px;
     font-family: 'Roboto';
+    font-weight: 500;
     margin: 0;
 }
 
@@ -17,7 +9,6 @@
     position: absolute;
     top: 40%;
     left: 50%;
-    margin-right: -50%;
     transform: translate(-50%, -50%)
 }
 
@@ -25,5 +16,13 @@ a {
     text-decoration: none;
     font-family: 'Roboto';
     font-weight: 700;
+    margin-right: 25px;
+}
+
+.LinkedIn {
     color: #0072b1;
+}
+
+.Emner {
+    color: #000000;
 }
