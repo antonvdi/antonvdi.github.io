@@ -1,16 +1,17 @@
-import { useState } from "react";
 import Map from "./Map";
 import styles from "./VisitedCountries.module.css";
 
 export default function VisitedCountries() {
-    const [countries, setCountries] = useState(0);
+    let visitedCountries = ["BEL", "CHE", "DEU", "DNK", "DOM", "EGY", "ESP",
+    "FRA", "GBR", "GRC", "HTI", "ITA", "JAM", "MEX", "NLD", "NOR", "SWE", "THA",
+    "TUR", "USA"];
 
     return (
         <div className={styles.map}>
             <div>
-                <h1 className={styles.Header}>Jeg har besøgt {countries} lande</h1>
+                <h1 className={styles.Header}>Alle lande jeg har besøgt:</h1>
             </div>
-            <Map setCountries={setCountries}></Map>
+            <Map highlightedCountries={visitedCountries}></Map>
         </div>
     );
 };

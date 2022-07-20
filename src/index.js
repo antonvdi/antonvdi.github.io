@@ -12,6 +12,8 @@ import Island from './components/Island';
 import Emner from './components/Emner';
 import HomeButton from './components/HomeButton';
 import VisitedCountries from './components/VisitedCountries';
+import PlaygroundPage from './components/PlaygroundPage';
+import CountryMaker from './components/CountryMaker';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,6 +25,8 @@ root.render(
         <Route path="/island" element={<Island />}/>
         <Route path="/emner" element={<Emner />}/>
         <Route path="/lande" element={<VisitedCountries />} />
+        <Route path="/playground" element={<PlaygroundPage />}/>
+        <Route path="/landeleg" element={<CountryMaker />}/>
       </Routes>
     </HashRouter>
   </div>

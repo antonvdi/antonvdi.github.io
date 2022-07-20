@@ -2,18 +2,15 @@ import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 
 const geoUrl = "/map.json";
 
-export default function Map({setCountries}) {
-    let visitedCountries = ["BEL", "CHE", "DEU", "DNK", "DOM", "EGY", "ESP",
-        "FRA", "GBR", "GRC", "HTI", "ITA", "JAM", "MEX", "NLD", "NOR", "SWE", "THA",
-        "TUR", "USA"];
-    setCountries(visitedCountries.length);
+export default function Map({highlightedCountries}) {
+
     return ( 
     <div>
         <ComposableMap width={1600}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
                 geographies.map((geo) => {
-                    if(visitedCountries.includes(geo.id)) {
+                    if(highlightedCountries.includes(geo.id)) {
                         return (<Geography 
                             key={geo.rsmKey} 
                             geography={geo}
@@ -39,7 +36,7 @@ export default function Map({setCountries}) {
           <Geographies geography={geoUrl}>
           {({ geographies }) =>
                 geographies.map((geo) => {
-                    if(!visitedCountries.includes(geo.id)) {
+                    if(!highlightedCountries.includes(geo.id)) {
                         return (<Geography 
                             key={geo.rsmKey} 
                             geography={geo}

@@ -1,0 +1,30 @@
+.PaperCard {
+    padding: 50px 50px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    background-color: rgb(223, 239, 255);
+    color: black;
+}
+.PaperCard:hover {
+    background-color: rgb(193, 213, 236);
+}
+
+.PaperCard2 {
+    padding: 50px 50px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    background-color: rgb(223, 255, 248);
+    color: black;
+}
+.PaperCard2:hover {
+    background-color: rgb(193, 236, 211);
+}
+
+.CenterBox {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
