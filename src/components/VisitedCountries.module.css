@@ -1,0 +1,14 @@
+.map {
+    margin-top: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Header {
+    font-size: 30px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    margin: 0;
+}
+
