@@ -14,6 +14,11 @@ export default function PlaygroundPage() {
                     Lav et land
                 </div>
             </Link>
+            <Link to="/solsystem">
+                <div className={styles.PaperCard}>
+                    Solsystem Simulation
+                </div>
+            </Link>
         </div>
     )
 }

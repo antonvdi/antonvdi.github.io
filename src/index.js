@@ -14,6 +14,7 @@ import HomeButton from './components/HomeButton';
 import VisitedCountries from './components/VisitedCountries';
 import PlaygroundPage from './components/PlaygroundPage';
 import CountryMaker from './components/CountryMaker';
+import SolsystemSimulator from './components/SolsystemSimulator';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +28,8 @@ root.render(
         <Route path="/lande" element={<VisitedCountries />} />
         <Route path="/playground" element={<PlaygroundPage />}/>
         <Route path="/landeleg" element={<CountryMaker />}/>
+        <Route path="/solsystem" element={<SolsystemSimulator />}/>
+
       </Routes>
     </HashRouter>
   </div>
