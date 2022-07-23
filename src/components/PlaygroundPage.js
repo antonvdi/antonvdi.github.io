@@ -4,7 +4,7 @@ import styles from "./PlaygroundPage.module.css";
 export default function PlaygroundPage() {
     return (
         <div className={styles.CenterBox}>
-            <Link to="/lande">
+            {/* <Link to="/lande">
                 <div className={styles.PaperCard}>
                     Besøgte lande
                 </div>
@@ -13,7 +13,7 @@ export default function PlaygroundPage() {
                 <div className={styles.PaperCard2}>
                     Lav et land
                 </div>
-            </Link>
+            </Link> */}
             <Link to="/solsystem">
                 <div className={styles.PaperCard}>
                     Solsystem Simulation

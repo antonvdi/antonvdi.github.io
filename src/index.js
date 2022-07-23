@@ -20,7 +20,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
     <HashRouter>
-      <HomeButton link="/"></HomeButton>
       <Routes>
         <Route path="/" element={<App />}/>
         <Route path="/island" element={<Island />}/>
@@ -31,6 +30,7 @@ root.render(
         <Route path="/solsystem" element={<SolsystemSimulator />}/>
 
       </Routes>
+    <HomeButton link="/"></HomeButton>
     </HashRouter>
   </div>
 );
