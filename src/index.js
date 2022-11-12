@@ -8,7 +8,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Island from './components/Island';
 import Emner from './components/Emner';
 import HomeButton from './components/HomeButton';
 import VisitedCountries from './components/VisitedCountries';
@@ -22,7 +21,6 @@ root.render(
     <HashRouter>
       <Routes>
         <Route path="/" element={<App />}/>
-        <Route path="/island" element={<Island />}/>
         <Route path="/emner" element={<Emner />}/>
         <Route path="/lande" element={<VisitedCountries />} />
         <Route path="/playground" element={<PlaygroundPage />}/>
