@@ -8,12 +8,12 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Emner from './components/Emner';
+import Emner from './pages/Emner';
 import HomeButton from './components/HomeButton';
-import VisitedCountries from './components/VisitedCountries';
-import PlaygroundPage from './components/PlaygroundPage';
+import VisitedCountries from './pages/VisitedCountries';
+import PlaygroundPage from './pages/PlaygroundPage';
 import CountryMaker from './components/CountryMaker';
-import SolsystemSimulator from './components/SolsystemSimulator';
+import SolsystemSimulator from './pages/SolsystemSimulator';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

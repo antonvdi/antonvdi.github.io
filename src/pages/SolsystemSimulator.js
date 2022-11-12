@@ -1,4 +1,4 @@
-import Solsystem from "./Solsystem";
+import Solsystem from "../components/Solsystem";
 import styles from "./SolsystemSimulator.module.css";
 
 export default function SolsystemSimulator() {

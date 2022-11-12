@@ -8,7 +8,7 @@ function calculateOneForceOnMe(myPlanet, otherPlanet) {
     if (distance === 0) {
         return {fx: 0, fy: 0};
     }
-    f = 0.0001 * myPlanet.mass * otherPlanet.mass / (distance*distance);
+    let f = 0.0001 * myPlanet.mass * otherPlanet.mass / (distance*distance);
 }
 
 function calculateForceOnMe(myPlanet, allPlanets) {

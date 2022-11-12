@@ -1,4 +1,4 @@
-import Map from "./Map";
+import Map from "../components/Map";
 import styles from "./VisitedCountries.module.css";
 
 export default function VisitedCountries() {

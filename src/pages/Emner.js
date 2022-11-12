@@ -1,4 +1,4 @@
-import Article from "./Article"
+import Article from "../components/Article"
 
 let article3 = {
     id: 3,

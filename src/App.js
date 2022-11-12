@@ -1,4 +1,4 @@
-import Intro from "./components/Intro.js";
+import Intro from "./pages/Intro.js";
 
 function App() {
   return (
