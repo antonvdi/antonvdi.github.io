@@ -8,6 +8,14 @@ git pull
 cd client
 npm i
 npm run build
-gcloud app deploy
+gcloud app deploy app.yml
+gcloud app browse
+```
+
+```
+git pull
+cd server
+pip install -r requirements.txt
+gcloud app deploy api.yml
 gcloud app browse
 ```
