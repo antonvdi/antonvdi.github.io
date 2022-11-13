@@ -1,34 +1,51 @@
 from flask import Flask, jsonify, request
 from sqlalchemy import  create_engine
 from sqlalchemy import insert
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from datetime import datetime
+from db_orm import *
 
 con_string = r'mysql://antonvdi-db:(hvD<;Tx\_}fGjp9@34.141.6.61:3306/general'
-
 engine = create_engine(con_string)
+session = Session(engine)
+
 
 app = Flask(__name__)
 
 @app.route('/get_articles', methods = ['GET'])
-def home():
+def get_articles():
     if(request.method == 'GET'):
-        data = {'data': "hello world"}
+        articles = session.query(Article).all()
+        data = []
+        for article in articles:
+            data.append(
+                {
+                    "title": article.title,
+                    "author": article.author,
+                    "time": article.time,
+                    "publisher": article.publisher,
+                    "link": article.link,
+                }
+            )
         return jsonify(data)
 
 @app.route('/add_article', methods = ['POST'])
-def home():
+def add_article():
     if(request.method == 'POST'):
         author = request.form.get('author')
+        title = request.form.get('title')
+        publisher = request.form.get('publisher')
+        link = request.form.get('link')
+        time = datetime.strptime(request.form.get('time'), r"%Y-%m-%d")
 
-        stmt = insert(articles).values(title='Vi bliver nødt til at snakke om unges mentale sundhed',
-            author='Anton Irvold',
-            time=datetime(2020, 11, 19),
-            publisher="Berlingske",
-            link="https://www.berlingske.dk/laesere/det-er-slemt-nok-med-regneevnerne-men-hvor-mange-boern-i-4-klasse-kan-i"
+        a = Article(title = title,
+            author = author,
+            time = time,
+            publisher = publisher,
+            link = link
             )
-        session.execute(stmt)
-        return jsonify(data)
+        session.add(a)
+        session.commit()
 
 
 # driver function

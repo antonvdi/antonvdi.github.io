@@ -1,5 +1,4 @@
-from sqlalchemy import  create_engine
-from sqlalchemy import Table, Column, Integer, String, MetaData, ForeignKey, Text, DateTime
+from sqlalchemy import create_engine
 from sqlalchemy import insert
 from sqlalchemy.orm import Session
 from datetime import datetime
@@ -10,7 +9,7 @@ con_string = r'mysql://antonvdi-db:(hvD<;Tx\_}fGjp9@34.141.6.61:3306/general'
 engine = create_engine(con_string)
 
 Base.metadata.create_all(engine)
-
+session = Session(engine)
 
 # stmt = insert(articles).values(title='Atomkraft er ikke en mirakelløsning på klimaspørgsmålet',
 #     author='Anton Irvold',
@@ -37,11 +36,6 @@ Base.metadata.create_all(engine)
 
 # session.commit()
 
-session = Session(engine)
-stmt = select(Article).all()
-
-for user in session.scalars(stmt):
-    print(user)
 
 # let article2 = {
 #     id: 2,
