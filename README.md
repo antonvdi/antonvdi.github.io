@@ -21,4 +21,4 @@ gcloud app deploy api.yml
 gcloud app browse
 ```
 db instance id / username: antonvdi-db
-db password: (hvD<;Tx\_}fGjp9
+db password: 

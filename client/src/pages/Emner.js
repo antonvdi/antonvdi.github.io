@@ -1,3 +1,4 @@
+import React, { useEffect } from "react"
 import Article from "../components/Article"
 
 let article3 = {
@@ -94,9 +95,21 @@ let article2 = {
 
 let articles = [article3, article2, article1];
 
+
+
 function Emner() {
+    useEffect(() => {
+        const apiUrl = 'http://127.0.0.1:8080/get_articles';
+        console.log(apiUrl);
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => console.log('This is your data', data));
+    });
+    console.log("etneoi")
+
     return (
         <div>
+            <p>Teststtst</p>
             {articles.map((article, index) => {
                 if ("references" in article) {
                     return (<Article article={article} references={article.references}/>);

@@ -25,7 +25,7 @@ class Article(Base):
 class Passage(Base):
     __tablename__ = "passages"
 
-    id = Column("id", primary_key=True)
+    id = Column("id", Integer, primary_key=True)
     article_id = Column("article_id", ForeignKey("articles.id"))
     text = Column("text", Text)
 

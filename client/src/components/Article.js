@@ -11,6 +11,7 @@ function Article(props) {
     let publisher = props.article.publisher;
     let link = props.article.link;
     let references = props.references;
+
     let publisherString;
     if (publisher !== undefined) {
         publisherString = (<div><a href={link}>Bragt i {publisher}</a></div>)
