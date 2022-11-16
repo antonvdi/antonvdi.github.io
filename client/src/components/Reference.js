@@ -3,7 +3,7 @@ import styles from "./Reference.module.css"
 function Reference (props) {
     let author = props.reference.author;
     let year = props.reference.year;
-    let title = props.reference.title;
+    let title = props.reference.title ?? "U.d.";
     let link = props.reference.link;
 
     return (

@@ -3,6 +3,8 @@ from sqlalchemy import insert, select, create_engine
 from sqlalchemy.orm import Session
 from datetime import datetime
 from db_orm import *
+from flask_cors import CORS
+
 
 con_string = r'mysql://antonvdi-db:(hvD<;Tx\_}fGjp9@34.141.6.61:3306/general'
 engine = create_engine(con_string)
@@ -10,6 +12,7 @@ session = Session(engine)
 
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/get_articles', methods = ['GET'])
 def get_articles():
@@ -17,15 +20,21 @@ def get_articles():
     data = []
     for article in articles:
         passages = [passage.text for passage in article.passages]
+        references = [{"author": reference.authors,
+                "year": reference.year,
+                "title": reference.title,
+                "link": reference.link,
+                "id": reference.id} for reference in article.references]
         data.append(
             {
                 "id": article.id,
                 "title": article.title,
                 "author": article.author,
-                "time": article.time,
+                "time": datetime.strftime(article.time, r"%Y-%m-%d"),
                 "publisher": article.publisher,
                 "link": article.link,
                 "passages": passages,
+                "references": references
             }
         )
     return jsonify(data)
@@ -74,12 +83,54 @@ def delete_passage(id):
         return Response("{}", status=400, mimetype='application/json')
     session.delete(passage)
     session.commit()
-    return jsonify(passage)
+    return jsonify(id=passage.id, article_id = passage.article_id, text=passage.text)
 
 @app.route('/get_passages/<article_id>', methods = ['GET'])
 def get_passages(article_id):
     article = session.query(Article).get(article_id)
-    return jsonify(article.passages)
+    data = []
+    for passage in article.passages:
+        data.append(
+            {"id": passage.id,
+            "text": passage.text}
+        )
+    return jsonify(data)
+
+@app.route('/add_reference/<article_id>', methods = ['POST'])
+def add_references(article_id):
+    title = request.form.get('title')
+    authors = request.form.get('authors')
+    link = request.form.get('link')
+    year = request.form.get('year')
+
+    r = Reference(article_id = article_id,
+        title = title,
+        authors = authors,
+        link = link,
+        year = year
+        )
+    session.add(r)
+    session.commit()
+    return jsonify(id = r.id, article_id = r.article_id, title=r.title, authors=r.authors, link=r.link, year=r.year)
+
+@app.route("/delete_reference/<id>", methods=["DELETE"])
+def delete_reference(id):
+    r = session.query(Reference).get(id)
+    if not r:
+        return Response("{}", status=400, mimetype='application/json')
+    session.delete(r)
+    session.commit()
+    return jsonify(id = r.id, article_id = r.article_id, title=r.title, authors=r.authors, link=r.link, year=r.year)
+
+@app.route('/get_references/<article_id>', methods = ['GET'])
+def get_references(article_id):
+    article = session.query(Article).get(article_id)
+    data = [{"author": reference.authors,
+                "year": reference.year,
+                "title": reference.title,
+                "link": reference.link,
+                "id": reference.id} for reference in article.references]
+    return jsonify(data)
 
 # driver function
 if __name__ == '__main__':

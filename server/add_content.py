@@ -38,6 +38,56 @@ baselink = r"http://127.0.0.1:8080/"
 # for passage in passages:
 #     requests.post(baselink + "add_passage/3", passage)
 
+references = [
+    {
+        "authors": "Jacobson, M.Z.",
+        "year": "2019",
+        "title": "Evaluation of Nuclear Power as a Proposed Solution to Global Warming, Air Pollution, and Energy Security",
+        "link": "https://web.stanford.edu/group/efmh/jacobson/Articles/I/NuclearVsWWS.pdf",
+    },
+    {
+        "authors": "Breyer og Fasihi",
+        "year": "2020",
+        "title": "Baseload electricity and hydrogen supply based on hybrid PV-wind power plants",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0959652619333360",
+    },
+    {
+        "authors": "Diesendorf M.",
+        "year": "2011",
+        "title": "Renewable energy can provide baseload power - here’s how",
+        "link": "https://theconversation.com/renewable-energy-can-provide-baseload-power-heres-how-2221",
+    },
+    {
+        "authors": "Aengenheyster M., et al.",
+        "year": "2018",
+        "title": "The point of no return for climate action: effects of climate uncertainty and risk tolerance",
+        "link": "https://esd.copernicus.org/articles/9/1085/2018/",
+    },
+    {
+        "authors": "Rosenqvist, E.B.",
+        "year": "2022",
+        "title": "Kæmpe klimaaftale i Esbjerg kan booste dansk økonomi, men byder også på store udfordringer",
+        "link": "https://www.dr.dk/nyheder/penge/kaempe-klimaaftale-i-esbjerg-kan-booste-dansk-oekonomi-men-byder-ogsaa-paa-store",
+    },
+    {
+        "authors": "Bjørn-Hansen, S.",
+        "title": "Atomkraft, ja tak?",
+        "link": "https://www.dr.dk/viden/webfeature/atomkraft-ja-nej",
+    },
+    {
+        "authors": "Persson, C.P.",
+        "year": "2018",
+        "title": "Kan atomkraft redde verden?",
+        "link": "https://videnskab.dk/kultur-samfund/kan-atomkraft-redde-verden",
+    },
+]
+
+# for i in range(0, 40):
+#     requests.delete(baselink + "delete_reference/" + str(i))
+
+# for reference in references:
+#     requests.post(baselink + "add_reference/1", reference)
 
 data = requests.get(baselink + "get_articles").json()
+
 print(json.dumps(data, indent=4))
