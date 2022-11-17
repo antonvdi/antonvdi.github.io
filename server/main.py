@@ -3,7 +3,6 @@ from sqlalchemy import insert, select, create_engine
 from sqlalchemy.orm import Session
 from datetime import datetime
 from db_orm import *
-from flask_cors import CORS
 
 
 con_string = r'mysql://antonvdi-db:(hvD<;Tx\_}fGjp9@34.141.6.61:3306/general'
@@ -12,7 +11,6 @@ session = Session(engine)
 
 
 app = Flask(__name__)
-CORS(app)
 
 @app.route('/get_articles', methods = ['GET'])
 def get_articles():
