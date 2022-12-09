@@ -1,2 +1,2 @@
-web: npx serve -s client/build
+web: npx serve -s build
 api: gunicorn server.app:app
