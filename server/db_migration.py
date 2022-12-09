@@ -5,7 +5,7 @@ from datetime import datetime
 from db_orm import *
 from sqlalchemy import select
 
-con_string = r'mysql://antonvdi-db:(hvD<;Tx\_}fGjp9@34.141.6.61:3306/general'
+con_string = r'postgres://wgfbtjwfmetpro:2470b2a0c663600817d271674ee82479080d552628b165ca4b1b36e9aa15cb42@ec2-34-252-216-149.eu-west-1.compute.amazonaws.com:5432/df2kchd9rhrqjl'
 engine = create_engine(con_string)
 
 Base.metadata.create_all(engine)

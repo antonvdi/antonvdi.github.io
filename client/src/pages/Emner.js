@@ -6,7 +6,7 @@ import Article from "../components/Article"
 function Emner() {
     const [articles, setArticles] = useState([]);
     useEffect(() => {
-        const apiUrl = 'https://api-dot-antonvdi.ey.r.appspot.com/api/get_articles';
+        const apiUrl = 'http://127.0.0.1:5000/get_articles';
         fetch(apiUrl)
           .then((response) => response.json())
           .then((data) => {
