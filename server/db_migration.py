@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy import insert
+from sqlalchemy import insert, Table
 from sqlalchemy.orm import Session
 from datetime import datetime
 from db_orm import *
@@ -10,31 +10,32 @@ engine = create_engine(con_string)
 
 Base.metadata.create_all(engine)
 session = Session(engine)
+articles = Table("articles", Base.metadata, autoload_with=engine)
 
-# stmt = insert(articles).values(title='Atomkraft er ikke en mirakelløsning på klimaspørgsmålet',
-#     author='Anton Irvold',
-#     time=datetime(2022, 4, 29)
-#     )
-# session.execute(stmt)
-# stmt = insert(articles).values(title='Skolebørns personlige data skal også være sikre i skyen',
-#     author='Anton Irvold',
-#     time=datetime(2022, 6, 18)
-#     )
-# session.execute(stmt)
-# stmt = insert(articles).values(title='Vi bliver nødt til at snakke om unges mentale sundhed',
-#     author='Anton Irvold',
-#     time=datetime(2020, 11, 19),
-#     publisher="Berlingske",
-#     link="https://www.berlingske.dk/laesere/det-er-slemt-nok-med-regneevnerne-men-hvor-mange-boern-i-4-klasse-kan-i"
-#     )
-# session.execute(stmt)
+stmt = insert(articles).values(title='Atomkraft er ikke en mirakelløsning på klimaspørgsmålet',
+    author='Anton Irvold',
+    time=datetime(2022, 4, 29)
+    )
+session.execute(stmt)
+stmt = insert(articles).values(title='Skolebørns personlige data skal også være sikre i skyen',
+    author='Anton Irvold',
+    time=datetime(2022, 6, 18)
+    )
+session.execute(stmt)
+stmt = insert(articles).values(title='Vi bliver nødt til at snakke om unges mentale sundhed',
+    author='Anton Irvold',
+    time=datetime(2020, 11, 19),
+    publisher="Berlingske",
+    link="https://www.berlingske.dk/laesere/det-er-slemt-nok-med-regneevnerne-men-hvor-mange-boern-i-4-klasse-kan-i"
+    )
+session.execute(stmt)
 
 # stmt = insert(passages).values(
 #     article_id='Vi bliver nødt til at snakke om unges mentale sundhed',
 #     text=""
 #    )
 
-# session.commit()
+session.commit()
 
 
 # let article2 = {

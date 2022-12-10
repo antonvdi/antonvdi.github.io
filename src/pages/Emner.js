@@ -8,9 +8,10 @@ function Emner() {
     useEffect(() => {
         const apiUrl = 'http://127.0.0.1:5000/get_articles';
         fetch(apiUrl)
-          .then((response) => response.json())
+          .then((response) => {
+            console.log(response); 
+            return response.json()})
           .then((data) => {
-
             data.forEach(element => {
                 element.time = new Date(element.time)
             });
