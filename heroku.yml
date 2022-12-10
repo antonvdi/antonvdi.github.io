@@ -2,8 +2,3 @@ build:
   docker:
     web: frontend.Dockerfile
     api: backend.Dockerfile
-
-release:
-  image:
-    web: latest
-    api: latest
