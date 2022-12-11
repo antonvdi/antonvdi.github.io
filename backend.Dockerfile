@@ -5,7 +5,7 @@ FROM python:3.7-alpine
 WORKDIR /app
 
 # add and install requirements
-COPY requirements.txt /app/requirements.txt
+COPY server/requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
 
 # add app
