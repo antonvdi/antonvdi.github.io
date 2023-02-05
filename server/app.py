@@ -37,6 +37,7 @@ def get_articles():
                 "references": references
             }
         )
+    print(jsonify(data))
     return jsonify(data)
 
 @app.route('/add_article', methods = ['POST'])
